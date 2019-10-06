@@ -1,61 +1,56 @@
 package ru.geekbrains.todolist.repr;
 
-import java.time.LocalDate;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
+
 public class ToDoRepr {
-  private Long id;
 
-  @NotEmpty private String description;
-  private String username;
+    private Long id;
 
-  @NotNull
-  @DateTimeFormat(pattern = "yyyy-MM-dd")
-  private LocalDate targetDate;
+    @NotEmpty
+    private String description;
 
-  public ToDoRepr() {}
+    private String username;
 
-  public Long getId() {
-    return id;
-  }
+    @NotNull
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate targetDate;
 
-  public void setId(Long id) {
-    this.id = id;
-  }
+    public ToDoRepr() {
+    }
 
-  public String getDescription() {
-    return description;
-  }
+    public Long getId() {
+        return id;
+    }
 
-  public void setDescription(String description) {
-    this.description = description;
-  }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-  public String getUsername() {
-    return username;
-  }
+    public String getDescription() {
+        return description;
+    }
 
-  public void setUsername(String username) {
-    this.username = username;
-  }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-  public LocalDate getTargetDate() {
-    return targetDate;
-  }
+    public String getUsername() {
+        return username;
+    }
 
-  public void setTargetDate(LocalDate targetDate) {
-    this.targetDate = targetDate;
-  }
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-  @Override
-  public String toString() {
-    return "UserRepr{" +
-        "id=" + id +
-        ", description='" + description + '\'' +
-        ", username='" + username + '\'' +
-        ", targetDate=" + targetDate +
-        '}';
-  }
+    public LocalDate getTargetDate() {
+        return targetDate;
+    }
+
+    public void setTargetDate(LocalDate targetDate) {
+        this.targetDate = targetDate;
+    }
 }
